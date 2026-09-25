@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Fish } from 'lucide-react'
+import { Mail, MapPin, MessageCircle } from 'lucide-react'
 import type { Translation } from '../translations'
 import { useScrollReveal } from '../hooks'
 
@@ -14,7 +14,6 @@ export default function Contact({ t }: ContactProps) {
   const sectionRef = useScrollReveal()
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I'd like to book a big game fishing trip in Madeira.")}`
-  const whatsappUrlPt = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de reservar uma viagem de pesca desportiva na Madeira.")}`
 
   return (
     <section

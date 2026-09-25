@@ -1,4 +1,4 @@
-import { Check, Star, Moon, Sun, Sunrise } from 'lucide-react'
+import { Check, Moon, Sun, Sunrise } from 'lucide-react'
 import type { Translation } from '../translations'
 import { useScrollReveal } from '../hooks'
 
