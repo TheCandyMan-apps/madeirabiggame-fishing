@@ -75,10 +75,11 @@ export default function Species({ t }: SpeciesProps) {
 
           {/* Right: info */}
           <div>
-            <h3 className="text-3xl sm:text-4xl font-black text-white mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+            <h3 className="text-3xl sm:text-4xl font-black text-white mb-1" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
               {current.name}
             </h3>
-            <p className="text-[#d4af37] font-medium mb-4">{current.pt}</p>
+            <p className="text-[#d4af37] font-medium text-sm">{current.pt}</p>
+            <p className="text-blue-500 text-xs italic mb-4">{current.scientific}</p>
             <p className="text-blue-200 leading-relaxed mb-6 text-lg">{current.desc}</p>
 
             <div className="flex flex-wrap gap-3 mb-8">

@@ -7,7 +7,9 @@ import Stats from './components/Stats'
 import Species from './components/Species'
 import Trips from './components/Trips'
 import Why from './components/Why'
+import Reviews from './components/Reviews'
 import Gallery from './components/Gallery'
+import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -23,7 +25,9 @@ export default function App() {
       <Species t={t} />
       <Trips t={t} />
       <Why t={t} />
+      <Reviews />
       <Gallery t={t} />
+      <FAQ />
       <Contact t={t} />
       <Footer t={t} />
     </div>
