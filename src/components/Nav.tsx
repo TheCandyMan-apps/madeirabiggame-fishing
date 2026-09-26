@@ -74,7 +74,7 @@ export default function Nav({ t, lang, onToggleLang }: NavProps) {
             {/* Book CTA */}
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-2 bg-[#d4af37] hover:bg-[#e8c55a] text-[#010b1a] font-bold text-sm px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 animate-pulse-glow"
+              className="hidden sm:inline-flex items-center whitespace-nowrap bg-[#d4af37] hover:bg-[#e8c55a] text-[#010b1a] font-bold text-xs tracking-wide px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 animate-pulse-glow"
             >
               {t.nav.book}
             </a>

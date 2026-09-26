@@ -81,25 +81,51 @@ export default function Gallery({ t }: GalleryProps) {
           <p className="text-blue-300 max-w-xl mx-auto leading-relaxed">{t.gallery.subtitle}</p>
         </div>
 
-        {/* Masonry-style grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[200px]">
-          {galleryImages.map((img, i) => (
+        {/* Photo wall grid — no voids */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+          {/* Hero tile — spans 2 cols */}
+          <div
+            onClick={() => setLightbox(0)}
+            className="relative col-span-2 lg:col-span-2 aspect-[16/9] overflow-hidden rounded-xl cursor-pointer group"
+          >
+            <img src={galleryImages[0].src} alt={galleryImages[0].alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-3 left-4 right-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">{galleryImages[0].caption}</div>
+          </div>
+
+          {/* Tall tile right of hero */}
+          <div
+            onClick={() => setLightbox(1)}
+            className="relative row-span-2 aspect-[3/4] lg:aspect-auto overflow-hidden rounded-xl cursor-pointer group"
+          >
+            <img src={galleryImages[1].src} alt={galleryImages[1].alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-3 left-4 right-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">{galleryImages[1].caption}</div>
+          </div>
+
+          {/* Row 2: two square tiles */}
+          {[2, 3].map((i) => (
             <div
               key={i}
               onClick={() => setLightbox(i)}
-              className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                i === 0 ? 'col-span-2 row-span-2' : ''
-              } ${i === 4 ? 'col-span-2' : ''}`}
+              className="relative aspect-square overflow-hidden rounded-xl cursor-pointer group"
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={galleryImages[i].src} alt={galleryImages[i].alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-3 left-3 right-3 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
-                {img.caption}
-              </div>
+              <div className="absolute bottom-3 left-4 right-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">{galleryImages[i].caption}</div>
+            </div>
+          ))}
+
+          {/* Row 3+: remaining 5 in uniform 3-col grid */}
+          {[4, 5, 6, 7, 8].map((i) => (
+            <div
+              key={i}
+              onClick={() => setLightbox(i)}
+              className="relative aspect-video overflow-hidden rounded-xl cursor-pointer group"
+            >
+              <img src={galleryImages[i].src} alt={galleryImages[i].alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-3 left-4 right-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">{galleryImages[i].caption}</div>
             </div>
           ))}
         </div>

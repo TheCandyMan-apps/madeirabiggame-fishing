@@ -19,7 +19,7 @@ export default function Contact({ t }: ContactProps) {
     <section
       id="contact"
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="reveal py-24 lg:py-32 relative overflow-hidden"
+      className="reveal py-24 lg:py-32 relative overflow-hidden w-full"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#021528]/30 via-[#010b1a] to-[#010b1a]" />
@@ -32,7 +32,7 @@ export default function Contact({ t }: ContactProps) {
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#010b1a]/60 to-[#010b1a]" />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative w-full max-w-3xl mx-auto px-6 sm:px-8 text-center">
         {/* Header */}
         <p className="text-[#d4af37] text-xs font-bold tracking-[0.3em] uppercase mb-3">Get In Touch</p>
         <h2
