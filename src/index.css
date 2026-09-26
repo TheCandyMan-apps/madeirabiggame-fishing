@@ -147,6 +147,7 @@ body {
 /* Section reveal */
 .reveal {
   opacity: 0;
+  width: 100%;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }

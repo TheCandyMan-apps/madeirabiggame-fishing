@@ -66,7 +66,7 @@ export default function Gallery({ t }: GalleryProps) {
     <section
       id="gallery"
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="reveal py-24 lg:py-32 bg-gradient-to-b from-[#010b1a] to-[#021528]/30"
+      className="reveal py-24 lg:py-32 bg-gradient-to-b from-[#010b1a] to-[#021528]/30 w-full"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

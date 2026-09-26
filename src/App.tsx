@@ -16,7 +16,7 @@ export default function App() {
   const t = translations[lang]
 
   return (
-    <div className="min-h-screen bg-[#010b1a] text-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#010b1a] text-white">
       <Nav t={t} lang={lang} onToggleLang={toggle} />
       <Hero t={t} />
       <Stats t={t} />
